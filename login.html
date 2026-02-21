@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Signup Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: white;
+        width: 350px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #667eea;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #5a67d8;
+    }
+
+    .toggle {
+        text-align: center;
+        margin-top: 15px;
+        cursor: pointer;
+        color: #667eea;
+    }
+
+    .form {
+        display: none;
+    }
+
+    .form.active {
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Login Form -->
+    <div class="form active" id="loginForm">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Login</button>
+        <div class="toggle" onclick="showSignup()">Don't have an account? Sign Up</div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form" id="signupForm">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Sign Up</button>
+        <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+
+</div>
+
+<script>
+function showSignup() {
+    document.getElementById("loginForm").classList.remove("active");
+    document.getElementById("signupForm").classList.add("active");
+}
+
+function showLogin() {
+    document.getElementById("signupForm").classList.remove("active");
+    document.getElementById("loginForm").classList.add("active");
+}
+</script>
+
+</body>
+</html>
